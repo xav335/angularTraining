@@ -4,9 +4,9 @@
     /*
      * Controleurs 
      */
-    app.controller('SalutationController', function(){
+    app.controller('SalutationController', function($scope){
         //alert('OK');
-        this.nom = 'toto';
+        $scope.nom = 'toto';
     });
     
 })();
