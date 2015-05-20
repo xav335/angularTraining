@@ -6,7 +6,7 @@
      */
     app.controller('SalutationController', function($scope){
         //alert('OK');
-        $scope.nom = 'toto';
+        $scope.nom = 'anonyme';
     });
     
 })();

@@ -11,8 +11,16 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/libs/angular.js" type="text/javascript"></script>
     </head>
-    <body>
-        <div data-ng-controller="SalutationController">{{ 'Hello '+ nom | uppercase }}</div>
+    <body data-ng-controller="SalutationController">
+        <h1>{{ 'Hello '+ nom | uppercase }}</h1>
+        <p>
+            Et vous vosu appellez comment ?
+            <input type="text" data-ng-model="nom" />
+            
+            
+        </p>
+        
+        
         <script src="js/app/app.js" type="text/javascript"></script>
     </body>
 </html>
