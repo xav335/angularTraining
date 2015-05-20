@@ -98,7 +98,18 @@
     }]);
 
     app.filter('importance', function(){
-        
+        return function(input){
+            switch (input){
+                case 1:
+                    return 'Basse';
+                case 2:
+                    return 'Moyenne';
+                case 3:
+                    return 'Haute';
+                default:
+                    return input;
+            }
+        }
     });
 
 
