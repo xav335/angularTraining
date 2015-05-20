@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+Incorporer bootstrap
+Incorporer jquery
+Incorporer angular
+
+creer un nv module Angular et l'integrer dasn ce documetn HTML
+-->
+<html data-ng-app="ColectivTdos">
+    <head>
+        <title>Collective TODOs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="js/libs/jquery-1.11.3.js" type="text/javascript"></script>
+        <script src="js/libs/bootstrap.js" type="text/javascript"></script>
+        <script src="js/libs/angular.js" type="text/javascript"></script>
+    </head>
+     <body>
+        <div class="container" data-ng-controller="TodosController">
+            <h1>
+               Nos trucs à faire en collectif
+            </h1>
+            <p>{{todos.length }} Tâches</p>
+        </div>
+        
+        <script src="js/app/app_hello.js" type="text/javascript"></script>
+    </body>
+</html>
