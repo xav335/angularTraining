@@ -7,7 +7,8 @@
     var todos = [
         {
             titre:'Préparer la salle de formation',
-            date:'2015-05-17',
+            description:'description de Préparer la salle de formation',
+            date:'2015-05-12',
             importance:1,
             realisee:false,
             commentaires:[
@@ -31,13 +32,14 @@
         },
          {
             titre:'Trouver une formation pour le stage',
+            description:'description de Trouver une formation pour le stage',
             date:'2015-05-17',
             importance:3,
             realisee:false,
             commentaires:[
                 {
                     auteur:'xavier@gonzalez.pm',
-                    date:'2015-05-17',
+                    date:'2015-05-02',
                     commentaire:'Tache super à ne pas confier à des choukis'
                 },
                 {
@@ -55,9 +57,10 @@
         },
          {
             titre:'Trouver les transports necessaire',
+            description:'description de s transports necessaire',
             date:'2015-05-17',
             importance:2,
-            realisee:false,
+            realisee:true,
             commentaires:[
                 {
                     auteur:'xavier@gonzalez.pm',
@@ -73,7 +76,32 @@
     app.controller('TodosController', ['$scope', function($scope){
         //alert('OK');
         $scope.todos = todos;
+        
+        $scope.selectionTache = function (value){
+            $scope.detailTache = value;
+            if (value.date > '2015-05-12'){
+           console.log(' date: '+value.date);
+           //if (!value.realisee){
+                  $scope.panelInfo = true;
+                  $scope.panelDanger = false;
+            }else{
+                  $scope.panelInfo = false;
+                  $scope.panelDanger = true;
+            }
+        };
+        
+        $scope.effaceTache = function (){
+            $scope.detailTache = null;
+        };
+        
+        
     }]);
+
+    app.filter('importance', function(){
+        
+    });
+
+
     
 })();
 
