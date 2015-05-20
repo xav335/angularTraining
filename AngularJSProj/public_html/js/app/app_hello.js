@@ -32,7 +32,7 @@
          {
             titre:'Trouver une formation pour le stage',
             date:'2015-05-17',
-            importance:1,
+            importance:3,
             realisee:false,
             commentaires:[
                 {
@@ -56,7 +56,7 @@
          {
             titre:'Trouver les transports necessaire',
             date:'2015-05-17',
-            importance:1,
+            importance:2,
             realisee:false,
             commentaires:[
                 {
@@ -70,10 +70,10 @@
         
     ];
     
-    app.controller('TodosController', function($scope){
+    app.controller('TodosController', ['$scope', function($scope){
         //alert('OK');
         $scope.todos = todos;
-    });
+    }]);
     
 })();
 
