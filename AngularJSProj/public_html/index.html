@@ -69,8 +69,24 @@
                                 {{ comm.message }}
                                 </br>
                                 <cite>- Le {{comm.date | date:'dd/MM/yyyy'}} -- par {{ comm.auteur }}</cite>
-                                
                             </blockquote>    
+                            <h4>Ajouter un commentaire</h4>
+                            <form name="frmAjoutCommentaire" data-ng-submit="ajouterCommentaire()" novalidate>
+                                <blockquote>
+                                {{ nvComm.message }}
+                                </br>
+                                <cite>- Le {{nvComm.date | date:'dd/MM/yyyy hh:mm:ss'}} -- par {{ nvComm.auteur }}</cite>
+                                </blockquote>
+                                <fieldset class="form-group">
+                                    <textarea data-ng-model="nvComm.message"  class="form-control" placeholder="Votre message" required></textarea>
+                                </fieldset>
+                                <fieldset class="form-group"> 
+                                    <input type="email" data-ng-model="nvComm.auteur"  class="form-control" placeholder="Votre email" required >
+                                </fieldset>
+                                 <fieldset class="form-group"> 
+                                     <input type="submit" class="btn btn-primary pull-right" data-ng-disabled="frmAjoutCommentaire.$invalid">
+                                </fieldset>
+                             </form>
                         </div>
                     </div>
                 </div>

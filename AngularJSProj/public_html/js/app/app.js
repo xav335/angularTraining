@@ -1,6 +1,7 @@
 
 (function(){
     var app = angular.module('CollectiveTodos', []);
+    var now = new Date();
     
     var todos = [
         {
@@ -86,10 +87,21 @@
                 $scope.infoActif = true;
                 $scope.commActif = false;
             }
-           
-            
         };
         
+        $scope.errorForm = false;
+        $scope.nvComm = {date:now.toISOString()}
+        $scope.ajouterCommentaire = function(){
+            //console.log(' form: '+ $scope.frmAjoutCommentaire.$valid);
+            if (!$scope.frmAjoutCommentaire.$valid){
+               
+            } else {
+                $scope.detailsTache.commentaires.push($scope.nvComm);
+                $scope.nvComm = null;
+            }
+            
+            
+        };
     }]);
 
     app.filter('importance', ['$sce', function($sce){
