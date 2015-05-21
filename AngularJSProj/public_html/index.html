@@ -65,7 +65,7 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="comm" data-ng-class="{active:commActif}">
                             <h4>Commentaires</h4>
-                            <blockquote data-ng-repeat="comm in commentairesTab">
+                            <blockquote data-ng-repeat="comm in commentairesTab | orderBy: '-date'">
                                 {{ comm.message }}
                                 </br>
                                 <cite>- Le {{comm.date | date:'dd/MM/yyyy'}} -- par {{ comm.auteur }}</cite>

@@ -60,13 +60,15 @@
                 },
                 {
                     auteur:'pauldurand@yahoo.fr',
-                    date:'2015-05-20',
+                    date:'2015-05-03',
                     message:'+10 :-)'
                 }
             ]
         }
     ];
     
+    //le ['$scope', est ajouter au cas ou on minififirait le script
+    // afin que scope ne soit pas écrasé mais inutile si gardé en clair.
     app.controller('tachesController', ['$scope',function($scope){
         $scope.nostaches = todos;
         
@@ -91,7 +93,7 @@
     }]);
 
     app.filter('importance', ['$sce', function($sce){
-            $sce.trustAsHtml();
+        $sce.trustAsHtml();
         return function(input,icones){
             icones = icones || false;
             if(!icones){
