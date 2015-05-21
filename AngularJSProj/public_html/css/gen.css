@@ -12,6 +12,11 @@ and open the template in the editor.
     text-decoration: line-through;
 }
 
+/*
+tr.n-scope {
+    background-color: #d9edf7;
+}
+*/
 .ng-dirty.ng-invalid {
     border-color: red;
 }

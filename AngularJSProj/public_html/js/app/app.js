@@ -90,14 +90,16 @@
         };
         
         $scope.errorForm = false;
-        $scope.nvComm = {date:now.toISOString()}
+        
+        $scope.nvComm = {date:now.toISOString()};
         $scope.ajouterCommentaire = function(){
             //console.log(' form: '+ $scope.frmAjoutCommentaire.$valid);
-            if (!$scope.frmAjoutCommentaire.$valid){
-               
-            } else {
+            
+            if ($scope.frmAjoutCommentaire.$valid){
                 $scope.detailsTache.commentaires.push($scope.nvComm);
+                $scope.frmAjoutCommentaire.$setPristine(true);
                 $scope.nvComm = null;
+                $scope.nvComm = {date:now.toISOString()};
             }
             
             
