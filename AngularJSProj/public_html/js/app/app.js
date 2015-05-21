@@ -72,6 +72,7 @@
         
         $scope.selectionTache = function(tache){
             $scope.detailsTache = tache;
+            $scope.commentairesTab = tache.commentaires;
             
         };
         $scope.infoActif = true;
